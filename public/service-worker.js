@@ -38,7 +38,7 @@ self.addEventListener("activate", function (evt) {
 // fetch
 self.addEventListener("fetch", evt => {
     if (evt.request.url.includes('/api/')) {
-        console.log('[Service Worker] Fetch(data)', evt.request.url);
+        console.log('[service-worker] Fetch(data)', evt.request.url);
 
         evt.respondWith(
             caches.open(DATA_CACHE_NAME).then(cache => {
