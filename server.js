@@ -15,9 +15,9 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect("mongodb://localhost/Transaction", {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Transaction", {
   useNewUrlParser: true,
-  useFindAndModify: false
+  useFindAndModify: false,
 });
 
 
